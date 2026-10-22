@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Nascose barre di scorrimento ma mantenuta la funzionalità */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Stili per chip di filtro attivi */
+.filter-chip.active {
+    background-color: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+}
+
+.dark .filter-chip.active {
+    background-color: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+}
+
+/* Stili per tab categoria attivi */
+.category-tab.active {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+.dark .category-tab.active {
+    background-color: #ffffff;
+    color: #111827;
+}

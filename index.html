@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Digitale - Bella Napoli</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-200 min-h-screen pb-20">
+
+    <!-- Header / Navbar Top -->
+    <header class="sticky top-0 z-30 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                    🍕
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg leading-tight tracking-tight text-gray-900 dark:text-white">Bella Napoli</h1>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Pizzeria & Ristorante</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <!-- Info WiFi Button -->
+                <button id="wifiBtn" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Wi-Fi">
+                    <i class="fa-solid fa-wifi"></i>
+                </button>
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Cambia Tema">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 pt-4 space-y-6">
+
+        <!-- Search & Sticky Filters -->
+        <section class="space-y-3">
+            <!-- Barra Ricerca -->
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="searchInput" placeholder="Cerca un piatto, ingrediente..." 
+                       class="w-full pl-10 pr-10 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition shadow-sm">
+                <button id="clearSearch" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Filtri Rapidi Allergeni & Diete -->
+            <div>
+                <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Filtra per esigenze alimentari</p>
+                <div class="flex items-center space-x-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+                    <button data-filter="gluten_free" class="filter-chip flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 whitespace-nowrap transition font-medium shadow-sm">
+                        <span>🌾</span><span>Senza Glutine</span>
+                    </button>
+                    <button data-filter="lactose_free" class="filter-chip flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 whitespace-nowrap transition font-medium shadow-sm">
+                        <span>🥛</span><span>Senza Lattosio</span>
+                    </button>
+                    <button data-filter="vegetarian" class="filter-chip flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 whitespace-nowrap transition font-medium shadow-sm">
+                        <span>🌱</span><span>Vegetariano</span>
+                    </button>
+                    <button data-filter="spicy" class="filter-chip flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 whitespace-nowrap transition font-medium shadow-sm">
+                        <span>🌶️</span><span>Piccante</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra Navigazione Categorie (Scroll orizzontale) -->
+        <nav class="sticky top-[61px] z-20 bg-gray-50/95 dark:bg-gray-900/95 backdrop-blur-md py-2 border-b border-gray-200/60 dark:border-gray-800">
+            <div id="categoryTabs" class="flex space-x-2 overflow-x-auto no-scrollbar py-1">
+                <!-- Generato dinamicamente via JS -->
+            </div>
+        </nav>
+
+        <!-- Lista Piatti Divisa per Categorie -->
+        <div id="menuContainer" class="space-y-8">
+            <!-- Piatti renderizzati via JS -->
+        </div>
+
+        <!-- Messaggio Nessun Risultato Trovato -->
+        <div id="noResults" class="hidden text-center py-12 space-y-3">
+            <div class="text-4xl">🔍</div>
+            <h3 class="font-bold text-gray-700 dark:text-gray-300">Nessun piatto trovato</h3>
+            <p class="text-xs text-gray-500">Prova a disattivare alcuni filtri o a cercare un'altra parola.</p>
+            <button id="resetFilters" class="px-4 py-2 bg-brand-500 text-white text-xs font-semibold rounded-lg shadow-md hover:bg-brand-600 transition">
+                Azzera Filtri
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal Dettaglio Piatto -->
+    <div id="dishModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-lg rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col transform transition-all">
+            <div class="relative h-48 bg-gray-100 dark:bg-gray-700">
+                <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+                <button id="closeModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center backdrop-blur-md hover:bg-black/70 transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-5 space-y-4 overflow-y-auto">
+                <div class="flex justify-between items-start">
+                    <h3 id="modalTitle" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
+                    <span id="modalPrice" class="text-lg font-extrabold text-brand-600 dark:text-brand-500 bg-brand-50 dark:bg-gray-700 px-2.5 py-1 rounded-lg"></span>
+                </div>
+                <p id="modalDescription" class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Caratteristiche & Allergeni</h4>
+                    <div id="modalBadges" class="flex flex-wrap gap-1.5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal WiFi -->
+    <div id="wifiModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-xs rounded-2xl p-5 shadow-xl text-center space-y-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mx-auto text-xl">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">Wi-Fi Gratuito</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Rete: <span class="font-semibold text-gray-700 dark:text-gray-300">BellaNapoli_Guest</span></p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-xl flex items-center justify-between">
+                <span class="font-mono text-sm font-bold tracking-wide">pizzabuona2024</span>
+                <button id="copyWifi" class="text-xs text-brand-600 font-semibold hover:underline">Copia</button>
+            </div>
+            <button id="closeWifi" class="w-full py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl text-xs font-bold">Chiudi</button>
+        </div>
+    </div>
+    <!-- Footer Finale con Brand e Copyright -->
+    <footer class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center space-y-2 pb-6">
+        <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+            🍕 Pizzeria & Ristorante Bella Napoli
+        </p>
+        <p class="text-[11px] text-gray-400 dark:text-gray-500">
+            Menu Digitale sviluppato da <a href="#" class="font-bold text-brand-600 dark:text-brand-500 hover:underline">Riccardo Fraccascia</a>
+        </p>
+    </footer>
+    <!-- JavaScript principale -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{
+  "categories": [
+    { "id": "pizze", "name": "Pizze Classiche", "icon": "🍕" },
+    { "id": "pizze_speciali", "name": "Pizze Gourmet & Speciali", "icon": "⭐" },
+    { "id": "sfizi", "name": "Antipasti & Fritti", "icon": "🍟" },
+    { "id": "bevande", "name": "Bevande & Birre", "icon": "🥤" },
+    { "id": "dolci", "name": "Dolci della Casa", "icon": "🍰" }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "category": "pizze",
+      "name": "Margherita DOP",
+      "description": "Pomodoro San Marzano DOP, fior di latte di Agerola, olio EVO a crudo, basilico fresco.",
+      "price": 6.50,
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": false,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 2,
+      "category": "pizze",
+      "name": "Marinara Saporita",
+      "description": "Pomodoro San Marzano, aglio dell'Ufita, origano di montagna, datterino rosso e basilico.",
+      "price": 5.50,
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": true,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 3,
+      "category": "pizze",
+      "name": "Diavola Calabrese",
+      "description": "Pomodoro DOP, fior di latte, salame piccante di Castrovillari, olio piccante della casa.",
+      "price": 8.00,
+      "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": false,
+      "vegetarian": false,
+      "spicy": true
+    },
+    {
+      "id": 4,
+      "category": "pizze",
+      "name": "Capricciosa",
+      "description": "Pomodoro, fior di latte, prosciutto cotto alta qualità, funghi champignon, carciofi e olive nere.",
+      "price": 9.00,
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": false,
+      "vegetarian": false,
+      "spicy": false
+    },
+    {
+      "id": 5,
+      "category": "pizze_speciali",
+      "name": "Pistacchiosa & Burrata",
+      "description": "Pesto di pistacchio di Bronte, fior di latte, mortadella Bologna IGP, granella e burrata pugliese intera.",
+      "price": 12.50,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": true,
+      "lactose_free": false,
+      "vegetarian": false,
+      "spicy": false
+    },
+    {
+      "id": 6,
+      "category": "pizze_speciali",
+      "name": "Tartufata Vegetariana",
+      "description": "Crema di tartufo nero, fior di latte, funghi porcini trifolati e scaglie di caciocavallo podolico.",
+      "price": 11.50,
+      "image": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": false,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 7,
+      "category": "sfizi",
+      "name": "Cuoppo Napoletano Misto",
+      "description": "Frittatina di bucatini, crocchè di patate senza lattosio, arancino al ragù e montanarina fritta.",
+      "price": 7.00,
+      "image": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": true,
+      "vegetarian": false,
+      "spicy": false
+    },
+    {
+      "id": 8,
+      "category": "sfizi",
+      "name": "Patatine Dippe Senza Glutine",
+      "description": "Patate fritte tagliate a sfoglia con buccia, fritte in olio dedicato 100% gluten-free.",
+      "price": 4.00,
+      "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": true,
+      "lactose_free": true,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 9,
+      "category": "bevande",
+      "name": "Coca-Cola 33cl (Vetro)",
+      "description": "Servita fredda con fetta di limone e ghiaccio.",
+      "price": 2.80,
+      "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": true,
+      "lactose_free": true,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 10,
+      "category": "bevande",
+      "name": "Birra Artigianale Gluten Free 50cl",
+      "description": "Birra bionda ad alta fermentazione, profumata e certificata senza glutine.",
+      "price": 5.00,
+      "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": true,
+      "lactose_free": true,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 11,
+      "category": "dolci",
+      "name": "Tiramisù della Casa",
+      "description": "Ricetta tradizionale con savoiardi, caffè espresso napoletano, crema al mascarpone e cacao amaro.",
+      "price": 5.00,
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": false,
+      "lactose_free": false,
+      "vegetarian": true,
+      "spicy": false
+    },
+    {
+      "id": 12,
+      "category": "dolci",
+      "name": "Cheesecake ai Frutti di Bosco",
+      "description": "Base croccante senza glutine, crema al formaggio fresco e coulis artigianale ai frutti di bosco.",
+      "price": 5.50,
+      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80",
+      "gluten_free": true,
+      "lactose_free": false,
+      "vegetarian": true,
+      "spicy": false
+    }
+  ]
+}
